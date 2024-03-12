@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  const currentItem = ref('#about')
+  const currentItem = ref<string>('')
 
   const data = ref([
     {

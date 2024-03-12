@@ -58,6 +58,11 @@ export default defineNuxtConfig({
           type: 'text/javascript',
           defer: true,
           src: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_TAG_MANAGER_ID}`
+        },
+        {
+          type: 'text/javascript',
+          defer: true,
+          src: '/gtag.js'
         }
       ]
     }

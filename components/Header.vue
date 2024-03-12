@@ -4,7 +4,6 @@
   }>()
 
   const navlinks = ref<any>([])
-
   const options = useState(() => [
     { text: 'Sobre', href: '#about' },
     { text: 'Experiência', href: '#experience' }
@@ -19,14 +18,18 @@
 
   const setActiveLink = (link: any) => link.$el.classList.toggle('active')
 
-  watch(props, () => {
-    const item = navlinks.value.find((link: any) => link.to === props.currentItem)
+  watch(
+    props,
+    () => {
+      const item = navlinks.value.find((link: any) => link.to === props.currentItem)
 
-    if (item) {
-      navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
-      setActiveLink(item)
-    }
-  })
+      if (item) {
+        navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
+        setActiveLink(item)
+      }
+    },
+    { deep: true }
+  )
 </script>
 
 <template>
