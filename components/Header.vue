@@ -11,7 +11,7 @@
   ])
 
   const handleClick = (el: number) => {
-    navlinks.value.forEach((link) => link.$el.classList.remove('active'))
+    navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
 
     const clickedElement = navlinks.value[el].$el
     clickedElement.classList.toggle('active')
@@ -20,10 +20,10 @@
   const setActiveLink = (link: any) => link.$el.classList.toggle('active')
 
   watch(props, () => {
-    const item = navlinks.value.find((link) => link.to === props.currentItem)
+    const item = navlinks.value.find((link: any) => link.to === props.currentItem)
 
     if (item) {
-      navlinks.value.forEach((link) => link.$el.classList.remove('active'))
+      navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
       setActiveLink(item)
     }
   })

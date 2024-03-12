@@ -17,6 +17,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      charset: 'utf-8',
       title: 'Bruno Carsten de Araújo',
       meta: [
         {
@@ -44,7 +45,27 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Bruno é um desenvolvedor de software que cria produtos acessiveis e experiências digitais na web.'
         }
+      ],
+      link: [
+        {
+          rel: 'prefetch',
+          as: 'script',
+          href: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_TAG_MANAGER_ID}`
+        }
+      ],
+      script: [
+        {
+          type: 'text/javascript',
+          defer: true,
+          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_TAG_MANAGER_ID}`
+        }
       ]
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      TAG_MANAGER_ID: process.env.NUXT_TAG_MANAGER_ID
     }
   },
 
