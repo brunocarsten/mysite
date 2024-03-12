@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900;
   }
@@ -11,6 +15,10 @@
 
   .active .nav-text {
     @apply text-slate-200;
+  }
+
+  a {
+    @apply cursor-pointer;
   }
 }
 
