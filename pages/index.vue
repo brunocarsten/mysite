@@ -19,14 +19,14 @@
     {
       title: 'Fullstack developer - Área Local',
       text: 'Arquitetura e design de sistemas escaláveis e de alto desempenho. Estabelecimento e implementação de melhores práticas e padrões',
-      tags: ['JavaScript', 'Vue', 'React', 'PHP', 'WordPress'],
+      tags: ['JavaScript', 'PHP', 'WordPress'],
       date: ['2018', '2022'],
       url: 'https://arealocal.com.br'
     },
     {
       title: 'Suporte técnico - Óbus Informática',
       text: 'Diagnóstico e reparo de hardware, Solução de problemas em sistemas, hardware e software. Compromisso com a satisfação do cliente.',
-      tags: ['PostgreSQL', 'Firebird', 'Excel'],
+      tags: ['PostgreSQL', 'Firebird', 'Atendimento'],
       date: ['2015', '2018']
     }
   ])
