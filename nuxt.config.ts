@@ -17,6 +17,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'pt-br'
+      },
       charset: 'utf-8',
       title: 'Bruno Carsten de Araújo',
       meta: [
