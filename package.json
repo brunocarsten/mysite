@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "mysite",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,6 +15,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@nuxt/fonts": "^0.4.0",
     "autoprefixer": "^10.4.18",
     "nuxt-og-image": "^3.0.0-rc.42",
     "postcss": "^8.4.35",

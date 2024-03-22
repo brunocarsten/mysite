@@ -1,8 +1,15 @@
-window.dataLayer = window.dataLayer || []
+var scriptExecuted = false
 
-function gtag() {
-  dataLayer.push(arguments)
+function executeGtagScript() {
+  if (!scriptExecuted) {
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'G-32D74FB9R7')
+    scriptExecuted = true
+  }
 }
-gtag('js', new Date())
 
-gtag('config', 'G-32D74FB9R7')
+window.addEventListener('scroll', executeGtagScript)
