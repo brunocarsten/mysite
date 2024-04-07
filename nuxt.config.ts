@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  sourcemap: true,
   devtools: { enabled: true },
 
   modules: ['nuxt-og-image', '@nuxt/fonts', '@nuxt/fonts'],
@@ -77,5 +78,11 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': { prerender: true }
+  },
+
+  experimental: {
+    componentIslands: {
+      selectiveClient: true
+    }
   }
 })
