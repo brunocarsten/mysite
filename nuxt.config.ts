@@ -76,6 +76,10 @@ export default defineNuxtConfig({
     }
   },
 
+  site: {
+    url: 'https://brunocarstenaraujo.com.br/'
+  },
+
   routeRules: {
     '/**': { prerender: true }
   },
