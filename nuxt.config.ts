@@ -88,5 +88,9 @@ export default defineNuxtConfig({
     componentIslands: {
       selectiveClient: true
     }
+  },
+
+  nitro: {
+    static : true
   }
 })
