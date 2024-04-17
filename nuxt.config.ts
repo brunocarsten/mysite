@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  sourcemap: true,
+  sourcemap: false,
   devtools: { enabled: true },
 
   modules: ['nuxt-og-image', '@nuxt/fonts', '@nuxt/fonts'],
@@ -91,6 +91,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    static : true
+    static: true
   }
 })
