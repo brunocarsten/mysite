@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
   sourcemap: false,
   devtools: { enabled: true },
-
   modules: ['nuxt-og-image', '@nuxt/fonts', '@nuxt/fonts', '@zadigetvoltaire/nuxt-gtm'],
-
   css: ['~/assets/css/main.css'],
 
   postcss: {
@@ -79,5 +77,7 @@ export default defineNuxtConfig({
 
   nitro: {
     static: true
-  }
+  },
+
+  compatibilityDate: '2024-08-16'
 })
