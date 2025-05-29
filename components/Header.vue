@@ -1,51 +1,65 @@
 <script lang="ts" setup>
-  const props = defineProps<{
-    currentItem: string
-  }>()
+const props = defineProps<{
+  currentItem: string
+}>()
 
-  const selectedItem = computed<string>(() => props.currentItem)
-  const navlinks = ref<any>([])
-  const options = useState(() => [
-    { text: 'Sobre', href: '#about' },
-    { text: 'Experiência', href: '#experience' }
-  ])
+const selectedItem = computed<string>(() => props.currentItem)
+const navlinks = ref<any>([])
+const options = useState(() => [
+  { text: "Sobre", href: "#about" },
+  { text: "Experiência", href: "#experience" },
+])
 
-  const handleClick = (el: number) => {
-    navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
+const handleClick = (el: number) => {
+  navlinks.value.forEach((link: any) => link.$el.classList.remove("active"))
 
-    const clickedElement = navlinks.value[el].$el
-    clickedElement.classList.toggle('active')
-  }
+  const clickedElement = navlinks.value[el].$el
+  clickedElement.classList.toggle("active")
+}
 
-  const setActiveLink = (link: any) => link.$el.classList.toggle('active')
+const setActiveLink = (link: any) => link.$el.classList.toggle("active")
 
-  watch(
-    selectedItem,
-    () => {
-      const item = navlinks.value.find((link: any) => link.to === props.currentItem)
+watch(
+  selectedItem,
+  () => {
+    const item = navlinks.value.find(
+      (link: any) => link.to === props.currentItem
+    )
 
-      if (item) {
-        navlinks.value.forEach((link: any) => link.$el.classList.remove('active'))
-        setActiveLink(item)
-      }
-    },
-    { deep: true }
-  )
+    if (item) {
+      navlinks.value.forEach((link: any) => link.$el.classList.remove("active"))
+      setActiveLink(item)
+    }
+  },
+  { deep: true }
+)
 </script>
 
 <template>
-  <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+  <header
+    class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
+  >
     <div>
-      <h1 class="text-4xl font-bold tracking-tight text-slate-200">Bruno Carsten de Araújo</h1>
-      <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Senior Front End Developer</h2>
-      <p class="mt-4 max-w-xs leading-normal">Transformo café em código.</p>
+      <h1 class="text-4xl font-bold tracking-tight text-slate-200">
+        Bruno Carsten de Araújo
+      </h1>
+      <h2
+        class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+      >
+        Senior Front End Developer
+      </h2>
+      <p class="mt-4 max-w-xs leading-normal">
+        Construo soluções digitais que unem código limpo e propósito.
+      </p>
       <nav class="nav hidden lg:block" aria-label="In-page jump links">
         <ul class="mt-16 w-max">
           <li v-for="({ text, href }, i) in options" :key="i">
             <NuxtLink
               @click="handleClick(i)"
               :ref="(el) => (navlinks[i] = el)"
-              :class="`z-99 group flex items-center py-3 ${i === 0 ? 'active' : ''} `"
+              :class="`z-99 group flex items-center py-3 ${
+                i === 0 ? 'active' : ''
+              } `"
               :to="href"
             >
               <span
