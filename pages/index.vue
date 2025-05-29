@@ -147,6 +147,7 @@ defineOgImageComponent("Nuxt", {
             </NuxtLink>
           </div>
         </Section>
+        <Cases />
         <Footer />
       </main>
     </div>

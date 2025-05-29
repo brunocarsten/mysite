@@ -8,6 +8,7 @@ const navlinks = ref<any>([])
 const options = useState(() => [
   { text: "Sobre", href: "#about" },
   { text: "Experiência", href: "#experience" },
+  { text: "Casos", href: "#cases" },
 ])
 
 const handleClick = (el: number) => {
