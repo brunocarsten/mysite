@@ -54,8 +54,8 @@ export default defineNuxtConfig({
       registry: {
         googleAnalytics: process.env.NUXT_TAG_MANAGER_ID
           ? {
-              id: process.env.NUXT_TAG_MANAGER_ID,
-            }
+            id: process.env.NUXT_TAG_MANAGER_ID,
+          }
           : undefined,
       },
     },
